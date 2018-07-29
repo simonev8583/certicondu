@@ -1,0 +1,63 @@
+/*azul= 006FBA*/
+  /*verde= E1E319*/
+  /*gris= ADB5BA*/
+  /*negro= 231F20*/
+  
+#bodyhome{
+    background-image: url("/assets/images/fondo1.jpg");
+    background-repeat: no-repeat, repeat;
+    background-color: #cccccc;
+    color:white;
+}
+#bodyhome2{
+    background-image: url("/assets/images/fondo2.jpg"), url("/assets/images/fondo2.jpg");
+    background-repeat: no-repeat, repeat;
+    background-color: #cccccc;
+    color:white;
+}
+#bodyhome3{
+    background-image: url("/assets/images/cursoC1.jpg");
+    background-repeat: no-repeat, repeat;
+    background-color: #cccccc;
+    color:white;
+}
+
+.table{
+    color:white;
+}
+.table-hover :hover{
+    color:#231F20 !important;
+}
+#itemActivo{
+    background-color: white;
+    color:#006FBA !important;
+    font-weight: bold;
+}
+
+#panelcursos{
+    color:white;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    text-align: center;
+}
+.panel {
+    background-color: rgba(142, 225, 250, 0.096);
+}
+
+.panel-heading{
+    background-color: #006FBA;
+    color:white;
+    font-weight: bold;
+    font-size: 20px;
+}
+.imgcentrada{
+    display:block;
+    filter: grayscale(0%);
+    box-shadow: 0px 0px 3px 3px #E1E319;
+    margin:auto; 
+}
+
+.imgcentrada:hover {
+    filter: sepia(60%);
+    box-shadow: 0px 0px 3px 3px #ADB5BA;
+}

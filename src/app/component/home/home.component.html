@@ -1,29 +1,326 @@
 <div class="full-screen">
-    <div class="col-lg-6">
-        <h3>Cursos de Moto</h3>
-        <table class="table table-hover">
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">Categoria</th>
-                <th scope="col">Especificación</th>
-                <th scope="col">Precio</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>A1</td>
-                <td>Conducir motocicletas con un cilindraje igual o menor a 125 cc</td>
-                <td>$ 400.000</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>A2</td>
-                <td>Conducir motocicletas con un cilindraje mayor a 125 cc</td>
-                <td>$ 600.000</td>
-              </tr>
-            </tbody>
-          </table>
+  <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12" id="bodyhome">
+    <div class="col-lg-1"></div>
+    <div class="col-lg-5">
+      <h3>Cursos de Moto</h3>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Categoria</th>
+            <th scope="col">Descripcion</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of cursosmoto" (click)="mostrar(item.curso)">
+            <th *ngIf="item.curso==mostrarElementoA" id="itemActivo">{{item.curso}}</th>
+            <td *ngIf="item.curso==mostrarElementoA" id="itemActivo">{{item.descripcion}}</td>
+            <th *ngIf="item.curso!=mostrarElementoA">{{item.curso}}</th>
+            <td *ngIf="item.curso!=mostrarElementoA">{{item.descripcion}}</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
+    <div class="col-lg-5">
+      <div class="panel panel-primary" *ngIf="mostrarElementoA == 'A1'" id="panelcursos">
+        <div class="panel-heading">
+          <h3 class="panel-title">Cursos de moto categoria {{A1categoria}}</h3>
+        </div>
+        <div class="panel-body">
+          <span>{{A1horaspracticas}}</span>
+          <br />
+          <span>{{A1horasteoricas}}</span>
+          <br />
+          <span> Incluye</span>
+          <br />
+          <span>{{InduccionPractica}}</span>
+          <br />
+          <span>{{TecnicasConduccion}}</span>
+          <br />
+          <span>{{ExamenesMedicos}}</span>
+        </div>
+        <img class="img-responsive img-rounded imgcentrada" [src]="'/assets/images/cursoA1.jpg'" alt="Img" style="width:60%;">
+        <img class="img-responsive img-rounded imgcentrada" [src]="'/assets/images/precioA1.png'" alt="Img" style="width:30%;">
+      </div>
+      <div class="panel panel-primary" *ngIf="mostrarElementoA == 'A2'" id="panelcursos">
+        <div class="panel-heading">
+          <h3 class="panel-title">Cursos de moto categoria {{A2categoria}}</h3>
+        </div>
+        <div class="panel-body">
+          <span>{{A2horaspracticas}}</span>
+          <br />
+          <span>{{A2horasteoricas}}</span>
+          <br />
+          <span> Incluye</span>
+          <br />
+          <span>{{InduccionPractica}}</span>
+          <br />
+          <span>{{TecnicasConduccion}}</span>
+          <br />
+          <span>{{ExamenesMedicos}}</span>
+        </div>
+        <img class="img-responsive img-rounded imgcentrada" [src]="'/assets/images/cursoA2.jpg'" alt="Img" style="width:60%;">
+        <img class="img-responsive img-rounded imgcentrada" [src]="'/assets/images/precioA2.png'" alt="Img" style="width:30%;">
+      </div>
+    </div>
+    <div class="col-lg-1"></div>
+  </div>
+  <div class="row visible-lg">
+      <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12" id="bodyhome2">
+          <div class="col-lg-1"></div>
+          <div class="col-lg-5">
+            <div class="panel panel-primary" *ngIf="mostrarElementoB == 'B1'" id="panelcursos">
+              <div class="panel-heading">
+                <h3 class="panel-title">Cursos de moto categoria {{B1categoria}}</h3>
+              </div>
+              <div class="panel-body">
+                <span>{{B1horaspracticas}}</span>
+                <br />
+                <span>{{B1horasteoricas}}</span>
+                <br />
+                <span> Incluye</span>
+                <br />
+                <span>{{InduccionPractica}}</span>
+                <br />
+                <span>{{TecnicasConduccion}}</span>
+                <br />
+                <span>{{ExamenesMedicos}}</span>
+              </div>
+              <img class="img-responsive img-rounded imgcentrada" [src]="'/assets/images/cursoB1.jpg'" alt="Img" style="width:60%;">
+              <img class="img-responsive img-rounded imgcentrada" [src]="'/assets/images/precioB1.png'" alt="Img" style="width:30%;">
+            </div>
+            <div class="panel panel-primary" *ngIf="mostrarElementoB == 'B2'" id="panelcursos">
+              <div class="panel-heading">
+                <h3 class="panel-title">Cursos de moto categoria {{B2categoria}}</h3>
+              </div>
+              <div class="panel-body">
+                <span>{{B2horaspracticas}}</span>
+                <br />
+                <span>{{B2horasteoricas}}</span>
+                <br />
+                <span> Incluye</span>
+                <br />
+                <span>{{InduccionPractica}}</span>
+                <br />
+                <span>{{TecnicasConduccion}}</span>
+                <br />
+                <span>{{ExamenesMedicos}}</span>
+              </div>
+              <img class="img-responsive img-rounded imgcentrada" [src]="'/assets/images/cursoB2.jpg'" alt="Img" style="width:60%;">
+              <img class="img-responsive img-rounded imgcentrada" [src]="'/assets/images/precioB2.png'" alt="Img" style="width:30%;">
+            </div>
+            <div class="panel panel-primary" *ngIf="mostrarElementoB == 'B3'" id="panelcursos">
+              <div class="panel-heading">
+                <h3 class="panel-title">Cursos de moto categoria {{B3categoria}}</h3>
+              </div>
+              <div class="panel-body">
+                <span>{{B3horaspracticas}}</span>
+                <br />
+                <span>{{B3horasteoricas}}</span>
+                <br />
+                <span> Incluye</span>
+                <br />
+                <span>{{InduccionPractica}}</span>
+                <br />
+                <span>{{TecnicasConduccion}}</span>
+                <br />
+                <span>{{ExamenesMedicos}}</span>
+              </div>
+              <img class="img-responsive img-rounded imgcentrada" [src]="'/assets/images/cursoB3.jpg'" alt="Img" style="width:60%;">
+              <img class="img-responsive img-rounded imgcentrada" [src]="'/assets/images/precioB3.png'" alt="Img" style="width:30%;">
+            </div>
+          </div>
+          <div class="col-lg-5">
+            <h3>Cursos de Carro Particular</h3>
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th scope="col">Categoria</th>
+                  <th scope="col">Descripcion</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of cursoscarroparticular" (click)="mostrar(item.curso)">
+                    <th *ngIf="item.curso==mostrarElementoB" id="itemActivo">{{item.curso}}</th>
+                    <td *ngIf="item.curso==mostrarElementoB" id="itemActivo">{{item.descripcion}}</td>
+                    <th *ngIf="item.curso!=mostrarElementoB">{{item.curso}}</th>
+                    <td *ngIf="item.curso!=mostrarElementoB">{{item.descripcion}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="col-lg-1"></div>
+        </div>
+  </div>
+  <div class="row visible-md visible-sm visible-xs">
+      <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12" id="bodyhome2">
+    <div class="col-lg-1"></div>
+    <div class="col-lg-5">
+        <h3>Cursos de Carro Particular</h3>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Categoria</th>
+              <th scope="col">Descripcion</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of cursoscarroparticular" (click)="mostrar(item.curso)">
+                <th *ngIf="item.curso==mostrarElementoB" id="itemActivo">{{item.curso}}</th>
+                <td *ngIf="item.curso==mostrarElementoB" id="itemActivo">{{item.descripcion}}</td>
+                <th *ngIf="item.curso!=mostrarElementoB">{{item.curso}}</th>
+                <td *ngIf="item.curso!=mostrarElementoB">{{item.descripcion}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-lg-5">
+          <div class="panel panel-primary" *ngIf="mostrarElementoB == 'B1'" id="panelcursos">
+            <div class="panel-heading">
+              <h3 class="panel-title">Cursos de moto categoria {{B1categoria}}</h3>
+            </div>
+            <div class="panel-body">
+              <span>{{B1horaspracticas}}</span>
+              <br />
+              <span>{{B1horasteoricas}}</span>
+              <br />
+              <span> Incluye</span>
+              <br />
+              <span>{{InduccionPractica}}</span>
+              <br />
+              <span>{{TecnicasConduccion}}</span>
+              <br />
+              <span>{{ExamenesMedicos}}</span>
+            </div>
+            <img class="img-responsive img-rounded imgcentrada" [src]="'/assets/images/cursoB1.jpg'" alt="Img" style="width:60%;">
+            <img class="img-responsive img-rounded imgcentrada" [src]="'/assets/images/precioB1.png'" alt="Img" style="width:30%;">
+          </div>
+          <div class="panel panel-primary" *ngIf="mostrarElementoB == 'B2'" id="panelcursos">
+            <div class="panel-heading">
+              <h3 class="panel-title">Cursos de moto categoria {{B2categoria}}</h3>
+            </div>
+            <div class="panel-body">
+              <span>{{B2horaspracticas}}</span>
+              <br />
+              <span>{{B2horasteoricas}}</span>
+              <br />
+              <span> Incluye</span>
+              <br />
+              <span>{{InduccionPractica}}</span>
+              <br />
+              <span>{{TecnicasConduccion}}</span>
+              <br />
+              <span>{{ExamenesMedicos}}</span>
+            </div>
+            <img class="img-responsive img-rounded imgcentrada" [src]="'/assets/images/cursoB2.jpg'" alt="Img" style="width:60%;">
+            <img class="img-responsive img-rounded imgcentrada" [src]="'/assets/images/precioB2.png'" alt="Img" style="width:30%;">
+          </div>
+          <div class="panel panel-primary" *ngIf="mostrarElementoB == 'B3'" id="panelcursos">
+            <div class="panel-heading">
+              <h3 class="panel-title">Cursos de moto categoria {{B3categoria}}</h3>
+            </div>
+            <div class="panel-body">
+              <span>{{B3horaspracticas}}</span>
+              <br />
+              <span>{{B3horasteoricas}}</span>
+              <br />
+              <span> Incluye</span>
+              <br />
+              <span>{{InduccionPractica}}</span>
+              <br />
+              <span>{{TecnicasConduccion}}</span>
+              <br />
+              <span>{{ExamenesMedicos}}</span>
+            </div>
+            <img class="img-responsive img-rounded imgcentrada" [src]="'/assets/images/cursoB3.jpg'" alt="Img" style="width:60%;">
+            <img class="img-responsive img-rounded imgcentrada" [src]="'/assets/images/precioB3.png'" alt="Img" style="width:30%;">
+          </div>
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
+  </div>
+  <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12" id="bodyhome3">
+    <div class="col-lg-1"></div>
+    <div class="col-lg-5">
+      <h3>Cursos de Carro Publico</h3>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Categoria</th>
+            <th scope="col">Descripcion</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of cursoscarropublico" (click)="mostrar(item.curso)">
+              <th *ngIf="item.curso==mostrarElementoC" id="itemActivo">{{item.curso}}</th>
+              <td *ngIf="item.curso==mostrarElementoC" id="itemActivo">{{item.descripcion}}</td>
+              <th *ngIf="item.curso!=mostrarElementoC">{{item.curso}}</th>
+              <td *ngIf="item.curso!=mostrarElementoC">{{item.descripcion}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-lg-5">
+      <div class="panel panel-primary" *ngIf="mostrarElementoC == 'C1'" id="panelcursos">
+        <div class="panel-heading">
+          <h3 class="panel-title">Cursos de moto categoria {{C1categoria}}</h3>
+        </div>
+        <div class="panel-body">
+          <span>{{C1horaspracticas}}</span>
+          <br />
+          <span>{{C1horasteoricas}}</span>
+          <br />
+          <span> Incluye</span>
+          <br />
+          <span>{{InduccionPractica}}</span>
+          <br />
+          <span>{{TecnicasConduccion}}</span>
+          <br />
+          <span>{{ExamenesMedicos}}</span>
+        </div>
+        <img class="img-responsive img-rounded imgcentrada" [src]="'/assets/images/cursoC1.jpg'" alt="Img" style="width:60%;">
+        <img class="img-responsive img-rounded imgcentrada" [src]="'/assets/images/precioC1.png'" alt="Img" style="width:30%;">
+      </div>
+      <div class="panel panel-primary" *ngIf="mostrarElementoC == 'C2'" id="panelcursos">
+        <div class="panel-heading">
+          <h3 class="panel-title">Cursos de moto categoria {{C2categoria}}</h3>
+        </div>
+        <div class="panel-body">
+          <span>{{C2horaspracticas}}</span>
+          <br />
+          <span>{{C2horasteoricas}}</span>
+          <br />
+          <span> Incluye</span>
+          <br />
+          <span>{{InduccionPractica}}</span>
+          <br />
+          <span>{{TecnicasConduccion}}</span>
+          <br />
+          <span>{{ExamenesMedicos}}</span>
+        </div>
+        <img class="img-responsive img-rounded imgcentrada" [src]="'/assets/images/cursoC2.png'" alt="Img" style="width:60%;">
+        <img class="img-responsive img-rounded imgcentrada" [src]="'/assets/images/precioC2.png'" alt="Img" style="width:30%;">
+      </div>
+      <div class="panel panel-primary" *ngIf="mostrarElementoC == 'C3'" id="panelcursos">
+        <div class="panel-heading">
+          <h3 class="panel-title">Cursos de moto categoria {{C3categoria}}</h3>
+        </div>
+        <div class="panel-body">
+          <span>{{C3horaspracticas}}</span>
+          <br />
+          <span>{{C3horasteoricas}}</span>
+          <br />
+          <span> Incluye</span>
+          <br />
+          <span>{{InduccionPractica}}</span>
+          <br />
+          <span>{{TecnicasConduccion}}</span>
+          <br />
+          <span>{{ExamenesMedicos}}</span>
+        </div>
+        <img class="img-responsive img-rounded imgcentrada" [src]="'/assets/images/cursoC3.png'" alt="Img" style="width:60%;">
+        <img class="img-responsive img-rounded imgcentrada" [src]="'/assets/images/precioC3.png'" alt="Img" style="width:30%;">
+      </div>
+    </div>
+    <div class="col-lg-1"></div>
+  </div>
 </div>

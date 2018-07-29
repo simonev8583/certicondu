@@ -6,6 +6,9 @@ import { routing, appRoutingProviders } from './app.routing';
 import { AppComponent } from './app.component';
 import {SlideshowComponent} from './component/slideshow/slideshow.component';
 import {HomeComponent} from './component/home/home.component';
+import {weComponent} from './component/we/we.component';
+import {ContactComponent} from './component/contact/contact.component';
+
 
 
 
@@ -13,7 +16,9 @@ import {HomeComponent} from './component/home/home.component';
   declarations: [
     AppComponent,
     SlideshowComponent,
-    HomeComponent
+    HomeComponent,
+    weComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,82 @@
+/*azul= 006FBA*/
+  /*verde= E1E319*/
+  /*gris= ADB5BA*/
+  /*negro= 231F20*/
+
+.fila1 {
+    background-color: #bdd9f1;
+  }
+  
+  
+  .fila2 {
+    background-color: #83a6cf;
+  }
+  
+  .imgwe {
+    width: auto;
+    height: auto;
+    filter:grayscale(20%);
+    margin-top: 5%;
+  }
+  
+  .imgwe:hover {
+    filter: grayscale(0%);
+    box-shadow: 0px 0px 3px 3px #006FBA;
+  }
+  
+  @media screen and (max-width: 992px) {
+    .imgwe {
+      margin-top:3%;
+    }
+  }
+  
+  .contenedor {
+      width: 100%;
+      margin: 0 auto;
+      overflow: hidden;
+      background-color: white;
+    }
+  
+  .main {
+    width: 70%;
+    padding: 20px;
+    float: left;
+    box-sizing: border-box;
+    background-color: aqua;
+  }
+  
+  .main1 {
+    width: 30%;
+    padding: 20%;
+    box-sizing: border-box;
+    background-color: blueviolet;
+    float: left;
+  }
+  
+  
+  
+  
+  .imgquiensomos {
+    width: 80%;
+    height: 0 auto;
+  }
+  
+  .vision {
+    position: relative;
+    bottom: -60px;
+  }
+  
+  .politicacalidad {
+    position: relative;
+    bottom: -60px;
+  }
+  
+  @media screen and (max-width: 800px) {
+    .main {
+      width: 100%;
+    }
+  
+    .resp {
+      width: 100%;
+    }
+  }
